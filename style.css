@@ -10,24 +10,55 @@ body{
      display:flex;
     justify-content: center;
     align-items: center;
-    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif ;
-    color: white;
+    perspective: 1200px;
+}
+:root{
+    --back-color:#322f2fc9;
+    --font-color:white;
+    --btn-bg-color:#7a7575c9;
+}
+#toggle{
+    display: none;
+}
+#toggle:checked+.frame{
+    --back-color:#c5b7b7c9;
+    --font-color:rgb(39, 36, 36);
+    --btn-bg-color:#cec2c2c9;
 }
 .frame{
-    width:300px;
+    width:260px;
     height:500px ;
-    background: #2b2929c9;
     backdrop-filter: blur(5px);
     border:5px solid rgb(10, 10, 10);
     border-radius: 40px;
     overflow: hidden;
+    transform: rotateX(20deg);
+    /* animation: rotate infinite 2s linear; */
+   
+}
+.appContainer{
+    height: 100%;
+    width: 100%;
+     font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif ;
+    color:var(--font-color);
+    background: var(--back-color);
+    
+}
+@keyframes rotate{
+    0%{
+        transform: rotateX(20deg) rotateY(0);
+    }
+    100%{
+        transform: rotateX(20deg) rotateY(360deg);
+    }
 }
 .iconSection{
-    width:100%;
+    width:97%;
     height: 20px;
-    font-size:12px;
+    font-size:11px;
     display: flex;
     justify-content:space-around;
+    margin-left:15px;
 }
 .camera{
     width: 70px;
@@ -37,4 +68,51 @@ body{
 }
 #battry{
     color: rgb(1, 54, 1);
+    margin-right: 20px;
+}
+.screenSection{
+    width: 90%;
+    height: 175px;
+    font-size: 3rem;
+    padding: 10px;
+    overflow:hidden;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+.buttonSection{
+    width: 90%;
+    height: 240px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+    margin: 7px;
+    gap: 15px;
+}
+.btn{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background:var(--btn-bg-color) ;
+    border-radius: 15px;
+    box-shadow: 5px 6px 10px 2px #02020229, -2px -2px 8px 0px #ebe9e929, inset 0px 1px 14px 9px #00000029;
+    font-weight: lighter;
+}
+.btn:hover{
+    cursor: pointer;
+    transform: scale(0.9);
+}
+.double-btn{
+    grid-column: span 2;
+}
+.special-btn{
+    background: #252323c9;
+    color: rgb(205, 198, 198);
+}
+.opt-btn{
+    background: #9d6804;
+    color: rgb(190, 194, 198);
 }
