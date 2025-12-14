@@ -28,7 +28,7 @@ function clickedEvent(){
     if(allowedKey.includes(e.key)||operatorBtn.includes(e.key)){
         display(e.key);
     }
-    else if (e.key=="Enter"){
+    else if (e.key=="Enter"||e.key=="="){
         checkCondition("=");
     }else if (e.key=="Backspace"){
         checkCondition("DEL");
