@@ -19,7 +19,7 @@ function clickedEvent(){
         // just to get value outside this fucking function
            lastClickedbtn=clickedBtn;
            //once button is clicked it would check conditions
-            checkCondition(clickedBtn);
+            checkCondition(lastClickedbtn);
         }
     )
     }
@@ -29,9 +29,9 @@ function clickedEvent(){
         display(e.key);
     }
     else if (e.key=="Enter"){
-        lastClickedbtn="=";
+        checkCondition("=");
     }else if (e.key=="Backspace"){
-        lastClickedbtn="DEL";
+        checkCondition("DEL");
     }else return;
     });
     
