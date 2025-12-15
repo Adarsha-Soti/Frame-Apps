@@ -1,5 +1,5 @@
 let screenSection=document.querySelector(".screenSection");
-let buttons=document.getElementsByClassName("buttonSection");
+let buttons=document.getElementsByClassName("btn");
 
 const operatorBtn=["*","%","+","-","/"];
 const allowedKey="1234567890";
